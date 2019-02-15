@@ -8,11 +8,16 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env
 
 const app = express()
 
+massive(CONNECTION_STRING).then((dbInstance) => {
+    app.set('db', dbInstance)
+    app.listen(4000, () => {
+        console.log(`Ready on port 4000`)
+    })
+})
+
 app.use(bodyParser.json)
 
-app.get('/api/product', ctrl.getAllProducts);
+app.get('/api/product', ctrl.getAll);
 
-app.get('/api/product/:id', ctrl.getProduct)
+app.get('/api/inventory/:id', ctrl.getProduct)
 
-
-app.listen(4000, () => console.log(`Ready on port 4000`))

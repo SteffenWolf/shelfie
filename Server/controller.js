@@ -1,10 +1,13 @@
 module.exports = {
-    getAllProducts: (req, res) => {
-        const db = req.app.get('db')
-
-        db.getAllProducts().then(response => {
-            res.status(200).send(response)
-        })
+    getAll: (req, res) => {
+      const dbInstance = req.app.get('db');
+      
+      dbInstance.getAll().then((response) => {
+        res.send(response)
+      }).catch((err) => {
+          res.sendStatus(500)
+          console.log(err)
+      })
     },
 
     getProduct: (req, res) => {
@@ -19,6 +22,6 @@ module.exports = {
         })
     }
 
-    
+
 
 }

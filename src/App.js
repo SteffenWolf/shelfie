@@ -35,6 +35,7 @@ class App extends Component {
     }
   }
   render() {
+    const {inventory} = this.state
     return (
       <div className="App">
         <Dashboard />
