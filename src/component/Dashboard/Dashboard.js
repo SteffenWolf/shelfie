@@ -7,7 +7,7 @@ import Axios from 'axios';
             super(props);
 
             this.state= {
-                inventory: {}
+ 
             }
             
         }
@@ -22,6 +22,7 @@ import Axios from 'axios';
         return(
 
             <div>DASHBOARD
+                {/* <div>inventory: {this.props.state.inventory}</div> */}
             <Product />
             </div>
         )

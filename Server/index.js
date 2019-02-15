@@ -10,5 +10,9 @@ const app = express()
 
 app.use(bodyParser.json)
 
+app.get('/api/product', ctrl.getAllProducts);
+
+app.get('/api/product/:id', ctrl.getProduct)
+
 
 app.listen(4000, () => console.log(`Ready on port 4000`))

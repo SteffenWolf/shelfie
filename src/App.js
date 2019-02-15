@@ -7,6 +7,33 @@ import Header from './component/Header/Header'
 import Product from './component/Product/Product'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      inventory: [
+        {imageInput: 'test',
+        productName: 'dummy',
+        price: '$22220'},
+
+        {imageInput: 'test',
+        productName: 'macbook',
+        price: '$22220'},
+
+        {imageInput: 'test',
+        productName: 'shoes',
+        price: '$22220'},
+
+        {imageInput: 'test',
+        productName: 'pants',
+        price: '$22220'},
+
+        {imageInput: 'test',
+        productName: 'neck',
+        price: '$22220'},
+    ]
+
+    }
+  }
   render() {
     return (
       <div className="App">
